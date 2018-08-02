@@ -1,0 +1,85 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*,*+* {
+    box-sizing: border-box;
+}
+.c {
+    margin: auto;
+    padding: 0 1.5em;
+    max-width: 80em;
+}
+.r {
+    margin: 0.4em 0;
+    display: table;
+    border-spacing: 1em 0;
+    table-layout: fixed;
+}
+.full, .r {
+    width: 100%;
+}
+@media (min-width: 769px){
+    .i{
+       display: table-cell;
+       height: 100%;
+    }
+    [class ~= "1"]{
+        width: 8.33%;
+    }
+    [class ~= "2"]{
+        width: 16.66%;
+    }
+    [class ~= "3"]{
+        width: 25%;
+    }
+    [class ~= "4"]{
+        width: 33.33%;
+    }
+    [class ~= "5"]{
+        width: 41.66%;
+    }
+}
+a:hover,.b:hover {
+	opacity: .7;
+}
+a {
+    color: #308f81;
+    text-decoration: none;
+}
+a.b {
+    font-size: 0.8em;
+}
+.b.primary {
+    color: white;
+    background: #308f81;
+    border: solid #308f81;
+}
+.b {
+    color: #308f81;
+    display: inline-block;
+    padding: 1em;
+    background: transparent;
+    border: solid;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+td, th {
+    padding: 0.8em;
+    text-align: left;
+    border-bottom: solid #e0e0e0;
+}
+hr {
+    border: solid #308f81;
+}
+.card {
+    padding: 0.8em;
+    background: #fff;
+    box-shadow: 8px 8px 15px -2px rgba(0,0,0,0.5);
+}
+pre {
+    overflow: auto;
+    font-family: "Courier New", Courier, monospace;
+    border: 0 solid;
+    border-left-width: 2px;
+}
