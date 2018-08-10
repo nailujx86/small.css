@@ -7,22 +7,26 @@ body {
 }
 .c {
     margin: auto;
-    padding: 0 1.5em;
+    padding: 1.5em;
     max-width: 80em;
 }
 .r {
     margin: 0.4em 0;
     display: table;
-    border-spacing: 1em 0;
+    border-spacing: 1.5em 0;
     table-layout: fixed;
 }
 .full, .r {
     width: 100%;
 }
+.i {
+    margin: 1.5em 0;
+}
 @media (min-width: 769px){
     .i{
        display: table-cell;
        height: 100%;
+       vertical-align: top;
     }
     [class ~= "1"]{
         width: 8.33%;
@@ -53,14 +57,14 @@ a.b {
 .b.primary {
     color: white;
     background: #308f81;
-    border: solid #308f81;
+    border: solid 1px #308f81;
 }
 .b {
     color: #308f81;
     display: inline-block;
     padding: 1em;
     background: transparent;
-    border: solid;
+    border: solid 1px;
     font-size: 0.8em;
     cursor: pointer;
 }
@@ -73,13 +77,21 @@ hr {
     border: solid #308f81;
 }
 .card {
-    padding: 0.8em;
     background: #fff;
-    box-shadow: 8px 8px 15px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.2);
+}
+.card img {
+    vertical-align: middle;
 }
 pre {
     overflow: auto;
     font-family: "Courier New", Courier, monospace;
     border: 0 solid;
     border-left-width: 2px;
+}
+.center {
+    text-align: center;
+}
+.i>br {
+    font-size: 1.5em;
 }
