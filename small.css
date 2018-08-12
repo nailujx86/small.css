@@ -10,6 +10,7 @@ body {
     margin: auto;
     padding: 1.5em;
     max-width: 80em;
+    position: relative;
 }
 .r {
     margin: 0.4em 0;
