@@ -84,7 +84,7 @@ td, th {
     border-bottom: solid #e0e0e0;
 }
 hr {
-    border: solid #308f81;
+    border: 1px solid #308f81;
 }
 .card {
     background: #fff;
@@ -102,6 +102,7 @@ pre {
     font-family: "Courier New", Courier, monospace;
     border: 0 solid;
     border-left-width: 2px;
+    padding-left: 1em;
 }
 .center {
     text-align: center;
