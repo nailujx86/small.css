@@ -1,0 +1,27 @@
+{
+  "name": "small.css",
+  "version": "0.1.0",
+  "description": "A really small css framework",
+  "main": "small.css",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nailujx86/small.css.git"
+  },
+  "author": "nailujx86",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nailujx86/small.css/issues"
+  },
+  "homepage": "https://github.com/nailujx86/small.css#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-zopfli-green": "^3.0.0"
+  }
+}
