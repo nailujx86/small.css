@@ -2,7 +2,7 @@ language: node_js
 node_js: "node"
 script: npx gulp
 before_deploy:
-  - git tag $TRAVIS_COMMIT -a -m "Generated tag from TravisCI for Build $TRAVIS_BUILD_NUMBER."
+  - git tag "Build $(date +'%d.%m.%Y %R')" -a -m "Generated tag from TravisCI for Build $TRAVIS_BUILD_NUMBER."
 deploy:
   provider: releases
   api_key: '$GITHUB_API_KEY'
