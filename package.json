@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/nailujx86/small.css#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-zopfli-green": "^3.0.0"
   }
