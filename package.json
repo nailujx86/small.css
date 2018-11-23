@@ -24,6 +24,7 @@
     "gulp-clean-css": "^3.10.0",
     "gulp-zopfli-green": "^3.0.0",
     "gulp-rename": "^1.4.0",
-    "gulp-concat": "^2.x"
+    "gulp-concat": "^2.x",
+    "fs-extra": "^7.0.0"
   }
 }
