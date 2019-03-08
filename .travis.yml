@@ -1,5 +1,6 @@
 language: node_js
 node_js: "node"
+if: tag IS blank
 script: npx gulp
 before_deploy:
   - git tag "Build_$TRAVIS_BUILD_NUMBER"
@@ -7,7 +8,7 @@ deploy:
   provider: releases
   api_key: '$GITHUB_API_KEY'
   file_glob: true
-  file: dist/*
+  file: dist/**/*
   on:
     tag: true
     branch: master
