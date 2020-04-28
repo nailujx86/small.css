@@ -31,6 +31,10 @@ h1,h2,h3,h4,h5,h6 {
 .i {
     margin: 1.5em 0;
 }
+table {
+    display: block;
+    overflow: auto;
+}
 @media (min-width: 769px){
     table {
         display: table;
@@ -83,10 +87,6 @@ a.b {
     font-size: 0.8em;
     cursor: pointer;
     border-radius: 2px;
-}
-table {
-    display: block;
-    overflow: auto;
 }
 td, th {
     padding: 0.5em;
