@@ -3,7 +3,7 @@
   right: 1.5em;
   font-size: small;
 }
-.opacity {
+.washed {
   opacity: 0.6;  
 }
 body {
@@ -15,7 +15,7 @@ body {
   bottom: 0;
   padding: .5rem;
   padding-bottom: .75rem;
-  background-color: #a7a7a7;
+  background-color: #555;
   text-align: center;
   color: #fff;
 }
