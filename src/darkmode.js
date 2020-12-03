@@ -1,48 +1,44 @@
-function getCookie(name) {
-    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return v ? v[2] : null;
-}
-
-function setCookie(name, value, days) {
-    var d = new Date;
-    d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-    document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+function refreshToggleButton() {
+    document.getElementById("toggle-theme").innerHTML = (currentTheme == "dark" ? "🌞" : "🌑");
 }
 
 function setTheme(theme) {
     if (theme == "dark") {
         document.documentElement.classList.add("dark");
-        setCookie('theme', 'dark', 999);
+        localStorage.setItem('theme', 'dark');
     } else {
         document.documentElement.classList.remove("dark");
-        setCookie('theme', 'light', 999);
+        localStorage.setItem('theme', 'light');
     }
+    if (document.readyState == "interactive" || document.readyState == "complete")
+        refreshToggleButton();
 }
 
 var currentTheme = "light";
 
 function toggleTheme() {
     if (currentTheme == "light") {
-        setTheme("dark");
         currentTheme = "dark";
+        setTheme("dark");
     }
     else {
-        setTheme("light");
         currentTheme = "light";
+        setTheme("light");
     }
 }
 
-if (!getCookie('theme')) {
+if (!localStorage.getItem('theme')) {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         currentTheme = "dark";
     } else {
         currentTheme = "light";
     }
 } else {
-    currentTheme = getCookie('theme');
+    currentTheme = localStorage.getItem('theme');
 }
 
 window.addEventListener("load", function () {
+    refreshToggleButton();
     document.documentElement.classList.add("animate");
 });
 
