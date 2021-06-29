@@ -18,18 +18,18 @@ h1,h2,h3,h4,h5,h6 {
 .c {
     margin: auto;
     padding: 1.5em;
-    max-width: 80em;
+    max-width: 70em;
 }
 .r {
     margin: 0.4em 0;
-    display: table;
-    table-layout: fixed;
+    display: block;
 }
 .full, .r {
     width: 100%;
 }
 .i {
-    margin: 1.5em 0;
+    margin: 0 .5em;
+    width: 100%
 }
 table {
     display: block;
@@ -40,11 +40,10 @@ table {
         display: table;
     }
     .r{
+        display: flex;
         border-spacing: 1.5em 0;
     }
     .i{
-        display: table-cell;
-        height: 100%;
         vertical-align: top;
     }
     [class ~= "1"]{
@@ -108,6 +107,9 @@ input, textarea {
 .card img {
     vertical-align: middle;
     width: 100%;
+}
+.i.tall .card {
+    height: 100%
 }
 pre {
     overflow: auto;
