@@ -1,3 +1,9 @@
+:root {
+  --color-footer: #555;
+}
+.dark {
+  --color-footer: #494949;
+}
 .acc {
   position: absolute;
   right: 1.5em;
@@ -15,7 +21,7 @@ body {
   bottom: 0;
   padding: .5rem;
   padding-bottom: .75rem;
-  background-color: #555;
+  background-color: var(--color-footer);
   text-align: center;
   color: #fff;
 }
@@ -59,4 +65,7 @@ img~.text_img {
 }
 .text_img * {
   position: relative;
+}
+.emoji {
+  font-family: "Segoe UI Emoji";
 }
