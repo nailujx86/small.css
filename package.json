@@ -22,12 +22,12 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
-    "gulp-zopfli-green": "^4.0.2"
+    "gulp-zopfli-green": "^5.0.2"
   },
   "dependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "fs-extra": "^9.0.0",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "fs-extra": "^10.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-uglify": "^3.0.2"
   }
