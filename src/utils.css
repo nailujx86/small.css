@@ -4,17 +4,28 @@
 .dark {
   --color-footer: #494949;
 }
+
+/* acc: used to place login/register links or account info
+on the top right of the page. */
 .acc {
   position: absolute;
   right: 1.5em;
   font-size: small;
 }
+
+/* washed: a helper class that reduces the opacity a bit. */
 .washed {
   opacity: 0.6;  
 }
 body {
   padding-bottom: 6em;
 }
+
+/* footer: used to place a footer at the bottom of the page.
+example:
+<footer class="full footer">
+  ...
+</footer>*/
 .footer {
   font-size: .8em;
   position: absolute;
@@ -25,23 +36,35 @@ body {
   text-align: center;
   color: #fff;
 }
-.gimme_space {
+
+/* space: helper class that helps your elements get some room to breath. :) */
+.space {
   margin-top: 2.5em;
 }
+
+/* undecorated: helper class that removes color and
+text decorations on text, primarily for unstyling links. */
 .undecorated {
   color: inherit;
   text-decoration: inherit;
 }
-form textarea {
-  resize: vertical;
-}
-.darken_img {
+
+/* img_darken: helper class that helps create a darkened overlay over an image
+to allow some text over the image.
+example:
+<div class="img_darken">
+  <img ... />
+  <div class="img_text">
+    <h1>Text</h1>
+  </div>
+</div>*/
+.img_darken {
   position: relative;
 }
-.darken_img * {
+.img_darken * {
   transition: opacity 0.5s;
 }
-.darken_img::before {
+.img_darken::before {
   background-color: black;
   display: block;
   height: 100%;
@@ -51,21 +74,37 @@ form textarea {
   position: absolute;
   transition: opacity 0.5s;
 }
-.darken_img:hover::before {
+.img_darken:hover::before {
   opacity: 0;
 }
-.darken_img:hover .text_img {
+.img_darken:hover .img_text {
   opacity: 0; 
 }
-img~.text_img {
+
+/* img_text: allows placing text over an image.
+  Image
+ ┌────────────────────────┐
+ │                        │
+ │                        │
+ │                        │
+ │                        │
+ │                        │
+ │ Some text              │
+ │ and some more text     │
+ └────────────────────────┘
+*/
+img~.img_text {
   position: absolute;
   margin: 1.5em;
   bottom: 0;
   color:white;
 }
-.text_img * {
+.img_text * {
   position: relative;
 }
+
+/* emoji: helper class to allow the use of emojis on windows
+example: <span class="emoji">👑</span>
 .emoji {
   font-family: "Segoe UI Emoji";
 }

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+/* CSS Variables for theming and styling */
 :root {
     --color-background: #f5f5f5;
     --color-text-light: #000;
@@ -8,6 +9,7 @@
     --color-background-contrast: #e0e0e0;
     --color-background-light-contrast: #fff;
     --color-background-light-contrast2: #dfdfdf;
+    --font: Raleway, Arial, Helvetica, sans-serif;
 }
 .dark {
     --color-background: #313131;
@@ -19,43 +21,79 @@
     --color-background-light-contrast: #494949;
     --color-background-light-contrast2: #181818;
 }
+
+/* CSS Resets */
 html {
     height: 100%;
 }
-body {
-    background-color: var(--color-background);
-    font-family: Raleway, Arial, Helvetica, sans-serif;
-    position: relative;
-    margin: 0;
-    min-height: 100%;
-    color: var(--color-text-light)
-}
-*,*+* {
+*,*:before,*:after {
     box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6 {
     margin: 10px 0;
 }
+
+body {
+    background-color: var(--color-background);
+    font-family: var(--font);
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    color: var(--color-text-light)
+}
+
+/* c: container element that keeps the page from covering
+the whole screen from left to right on larger screens */
 .c {
     margin: auto;
     padding: 1.5em;
     max-width: 70em;
 }
+
+/* r: declares a row for the 12 unit grid system.
+The row is automatically collapsed on smaller devices. */
 .r {
     margin: 0.4em 0;
     display: block;
 }
+
+/* full: a helper class to let an element fill horizontal space. */
 .full, .r {
     width: 100%;
 }
+
+/* i: is used to declare a column in a row.
+By default the space between columns is split evenly.
+To create a custom layout add a number after the i class.
+E.g.: class="i 4" to have that item fill up 1/3 (4/12) of
+the 12 unit grid system.
+example:
+<div class="r">
+    <div class="i 9">
+        ...
+    </div>
+    <div class="i 3">
+        ...
+    </div>
+</div>
+*/
 .i {
     margin: 0 .5em;
     width: 100%
+}
+
+/* Table styling */
+td, th {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: solid var(--color-background-contrast);
 }
 table {
     display: block;
     overflow: auto;
 }
+
+/* Responsive styling */
 @media (min-width: 769px){
     table {
         display: table;
@@ -83,21 +121,13 @@ table {
         width: 41.66%;
     }
 }
-a:hover,.b:hover {
-	opacity: .7;
-}
-a {
-    color: var(--color-secondary);
-    text-decoration: none;
-}
-a.b {
-    font-size: 0.8em;
-}
-.b.primary {
-    color: var(--color-text-dark);
-    background: var(--color-primary);
-    border: solid 1px var(--color-primary);
-}
+
+
+/* b: is used to style something like a button.
+Adding the class "primary" lets the button appear
+as solid.
+example:
+<button class="b primary">solid button</button>*/
 .b {
     color: var(--color-primary);
     display: inline-block;
@@ -108,18 +138,61 @@ a.b {
     cursor: pointer;
     border-radius: 2px;
 }
-td, th {
-    padding: 0.5em;
-    text-align: left;
-    border-bottom: solid var(--color-background-contrast);
+.b.primary {
+    color: var(--color-text-dark);
+    background: var(--color-primary);
+    border: solid 1px var(--color-primary);
 }
-hr {
-    border: 1px solid var(--color-primary);
+
+/* Link styling */
+a:hover,.b:hover {
+	opacity: .7;
 }
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+a.b {
+    font-size: 0.8em;
+}
+
+/* card: creates a card like element.
+To get desired spacing for text inside a card element
+you can embed a 'c' container element inside the card element.
+example:
+<div class="card">
+    <div class="c">
+        <h3>Header</h3>
+        <p>Some content</p>
+    </div>
+</div>*/
 .card {
     background: var(--color-background-light-contrast);
     border-radius: 2px;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.2);
+}
+.card img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* tall: using the class 'tall' on a 'i' column element makes it fill the
+vertical space of its parent row, thus making it possible to create
+equal height columns in a row. */
+.i.tall .card {
+    height: 100%
+}
+
+/* center: the helper class 'center' can be used to
+horizontally center text and various other components*/
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Other stylings */
+hr {
+    border: 1px solid var(--color-primary);
 }
 input,
 textarea,
@@ -127,23 +200,12 @@ select {
     border: 1px solid var(--color-background-contrast);
     padding: .4em;
 }
-.card img {
-    vertical-align: middle;
-    width: 100%;
-}
-.i.tall .card {
-    height: 100%
-}
 pre {
     overflow: auto;
     font-family: "Courier New", Courier, monospace;
     border: 0 solid;
     border-left-width: 2px;
     padding-left: 1em;
-}
-.center {
-    text-align: center;
-    vertical-align: middle;
 }
 .i>br {
     font-size: 1.5em;
